@@ -1,0 +1,5 @@
+# .gitIgnore
+# 2022-09-28 생성
+
+# sampleData 하위 모든 파일 
+sampleData/
