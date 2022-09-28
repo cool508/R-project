@@ -12,16 +12,15 @@ head(loc, 2) # 확인
 
 ## 수집 기간 설정
 datelist <- seq(from = as.Date("2021-01-01"),
-                to = as.Date("2021-12-31"),
+                to = as.Date("2021-04-30"),
                 by = "1 month")
 
-
-datelist <- format(datalist, format = "%Y%m") # 형식 변환 (YYYYMM)
+datelist <- format(datelist, format = "%Y%m") # 형식 변환 (YYYYMM)
 datelist[1:3] # 확인
 
 
 ## 인증키 입력
-service_key <- "GVCXnGY72se2aTAOiqSxXYyEvUkbJSNsACPi12nR5O%2F6HCcsJH%2B5FHYfTeVq4Agjej5SmOtqV9vegkjkJO%2FSwA%3D%3D" # nolint 
+service_key <- "GVCXnGY72se2aTAOiqSxXYyEvUkbJSNsACPi12nR5O%2F6HCcsJH%2B5FHYfTeVq4Agjej5SmOtqV9vegkjkJO%2FSwA%3D%3D"
 
 
 # 요청 목록 생성
@@ -67,7 +66,7 @@ for (i in 1 : length(url_list)) { # 요청 목록 (url_list) 반복
   raw_data[[i]] <- xmlTreeParse(url_list, useInternalNode = TRUE,
     encoding = "utf-8" # 결과 저장
   )
-  root_Node[[i]] <- xmlRoot(raw_data[[i]]) # nolint # xmlRoot로 루트 노드 이하 추출
+  root_Node[[i]] <- xmlRoot(raw_data[[i]]) # xmlRoot로 루트 노드 이하 추출
 
 
   ## 전체 거래 건수 확인하기
